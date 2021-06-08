@@ -31,6 +31,12 @@ def subtract_fruit(L):
     L[my_index][1] = new_amount
     print("The amount of {} in the bowl has been decreased to {}".format(L[my_index][0], new_amount))
 
+def new_fruit(L):
+    new_name = get_string("Please enter the name of the new fruit you'd like to add: ")
+    new_quantity = get_integer("Please enter the amount of fruit you'd like to add: ")
+    new_fruit = [new_name, new_quantity]
+    L.append(new_fruit)
+
 def main():
 
     fruit_list = [
@@ -43,8 +49,9 @@ def main():
     my_menu = '''
     A: Review bowl contents
     B: End the program
-    C: Add more of the same kind of fruit
+    C: Add more fruit to the bowl
     D: Remove fruit from the bowl
+    E: Add a different kind of fruit to the bowl
     '''
 
     run = True
@@ -60,6 +67,8 @@ def main():
             add_fruit(fruit_list)
         elif choice == "D":
             subtract_fruit(fruit_list)
+        elif choice == "E":
+            new_fruit(fruit_list)
         else:
             print("Unrecognised input, please try again")
             return main()

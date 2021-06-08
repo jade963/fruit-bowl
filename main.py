@@ -32,7 +32,6 @@ def subtract_fruit(L):
     print("The amount of {} in the bowl has been decreased to {}".format(L[my_index][0], new_amount))
 
 def main():
-
     fruit_list = [
         ["apples", 2],
         ["pears", 0],
@@ -48,7 +47,7 @@ def main():
     '''
 
     run = True
-    while run == True:
+    if run is True:
         print(my_menu)
         choice = get_string("Please enter your choice from the menu: ")
         if choice == "A":
